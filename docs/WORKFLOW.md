@@ -24,12 +24,23 @@ From this position, you can make the appropriate changes to the files for your p
 
 ```bash
 cd my-existing-project
-git remote add skeleton gh://gdcorp-hosting/skelyton
+git remote add skelyton git@github.com:gdcorp-hosting/skelyton.git
 git fetch skelyton
 git merge skelyton/main --allow-unrelated-histories
 ```
 
 This is also the workflow to use when updating the skelyton files in any given repository
+
+## Master -> Main branch conversion
+
+In an effort to be more concious, we are using the branch name main.  If you have an existing local repo, you'll have to update the branch information using the set of commands here
+
+```bash
+git branch -m master main
+git fetch origin
+git branch -u origin/main main
+git remote set-head origin -a
+```
 
 # Release Notes
 ---
